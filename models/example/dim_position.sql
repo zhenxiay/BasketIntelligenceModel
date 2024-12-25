@@ -16,7 +16,7 @@ from per_game_stats
 
 )
 
-select *
+select pos
 from source_data
 
 /*
