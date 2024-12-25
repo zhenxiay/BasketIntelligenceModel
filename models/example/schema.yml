@@ -19,3 +19,12 @@ models:
         data_tests:
           - unique
           - not_null
+
+  - name: dim_pos
+    description: "Schema for the dimension table position"
+    columns:
+      - name: pos
+        description: "The primary key for this table"
+        data_tests:
+          - unique
+          - not_null
