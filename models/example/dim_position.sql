@@ -12,7 +12,7 @@
 with source_data as (
 
 select distinct pos
-from `dbt-tutorial`.per_game_stats
+from `BasketIntelligence`.per_game_stats
 
 )
 
