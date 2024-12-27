@@ -10,6 +10,8 @@ models:
         data_tests:
           - unique
           - not_null
+          - accepted_values:
+              values: ['C','PF','SF','SG','PG']
 
   - name: dim_player_team
     description: "Schema for the dimension table position"
