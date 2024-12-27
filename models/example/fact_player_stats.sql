@@ -1,7 +1,10 @@
-{{ config(materialized=view) }}
+{{ config(materialized='view') }}
+
+with source_data as (
 
 SELECT a.Player,
        a.Team,
+       concat(a.Player,'_',a.Team) as player_ID,
        a.Pos,
        a.G,
        a.GS,
@@ -52,3 +55,7 @@ FROM `BasketIntelligence`.per_game_stats a
 LEFT JOIN `BasketIntelligence`.adv_stats b 
 ON a.Player=b.Player
 AND a.Team = b.Team
+)
+
+select *
+from source_data
