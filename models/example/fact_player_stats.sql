@@ -1,6 +1,6 @@
 {{ config(materialized='view') }}
 
-with source_data as (
+--with source_data as (
 
 SELECT a.Player,
        a.Team,
@@ -55,7 +55,7 @@ FROM `BasketIntelligence`.per_game_stats a
 LEFT JOIN `BasketIntelligence`.adv_stats b 
 ON a.Player=b.Player
 AND a.Team = b.Team
-)
+--)
 
-select *
-from source_data
+--select *
+--from source_data
