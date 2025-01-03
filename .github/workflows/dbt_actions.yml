@@ -2,8 +2,7 @@ name: Run dbt on BigQuery using mwhitaker/dbt-action
 
 on:
   push:
-    branches: none
-    #branches: [ "main" ] # Specify the branches to trigger the workflow
+    branches: [ "test" ]
 
 jobs:
   run_dbt:
