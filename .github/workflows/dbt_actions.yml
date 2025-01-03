@@ -10,10 +10,10 @@ jobs:
     steps:
     
     - name: dbt-action
-      id: dbt-debug
+      id: dbt-run
       uses: mwhitaker/dbt-action@master
       with:
-        dbt_command: "dbt debug --config-dir"
+        dbt_command: "dbt run"
       env:
         DBT_BIGQUERY_TOKEN: ${{ secrets.DBT_BIGQUERY_TOKEN }}
         
