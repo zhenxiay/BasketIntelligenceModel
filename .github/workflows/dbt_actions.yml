@@ -13,7 +13,7 @@ jobs:
       id: dbt-run
       uses: mwhitaker/dbt-action@master
       with:
-        dbt_command: "dbt run"
+        dbt_command: "dbt run --profiles-dir .\profile"
       env:
         DBT_BIGQUERY_TOKEN: ${{ secrets.DBT_BIGQUERY_TOKEN }}
         
