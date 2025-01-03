@@ -1,7 +1,24 @@
+name: Run dbt on BigQuery using mwhitaker/dbt-action
+
+on:
+  push:
+    branches: none
+    #branches: [ "main" ] # Specify the branches to trigger the workflow
+
+jobs:
+  run_dbt:
+    runs-on: ubuntu-latest
+    steps:
+    
     - name: dbt-action
+      id: dbt-run
       uses: mwhitaker/dbt-action@master
       with:
         dbt_command: "dbt run --profiles-dir ."
       env:
         DBT_BIGQUERY_TOKEN: ${{ secrets.DBT_BIGQUERY_TOKEN }}
-          
+        
+    - name: Get the result
+      if: ${{ always() }}
+      run: echo "${{ steps.dbt-run.outputs.result }}"
+      shell: bash
