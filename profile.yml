@@ -13,4 +13,3 @@ BasketIntelligenceModel:
       project: keen-vial-420113
       threads: 1
       type: bigquery
-  target: dev
