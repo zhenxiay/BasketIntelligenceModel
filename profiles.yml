@@ -1,6 +1,7 @@
 # profile file for using dbt core commands in github actions
 
 BasketIntelligenceModel:
+  target: dev
   outputs:
     dev:
       dataset: BasketIntelligence
