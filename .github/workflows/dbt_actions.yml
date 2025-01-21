@@ -8,10 +8,7 @@ jobs:
   run_dbt:
     runs-on: ubuntu-latest
     steps:
-
-		-name: checkout code
-			  uses: actions/checkout@v4
-    
+    - uses: actions/checkout@v4
     - name: dbt-action
       id: dbt-run
       uses: mwhitaker/dbt-action@master
