@@ -1,0 +1,48 @@
+{{ config(materialized='view') }}
+
+SELECT 
+    b.Team,
+    Age,
+    W,
+    L,
+    PW,
+    PL,
+    MOV,
+    SOS,
+    SRS,
+    ORtg,
+    DRtg,
+    NRtg,
+    Pace,
+    FTr,
+--    3PAr,
+    TS_pct,
+    Arena,
+    Attend,
+    Attend_G
+    dev_eFG_pct,
+    dev_TOV_pct,
+    dev_DRB_pct,
+    dev_FT_FGA,
+    off_eFG_pct,
+    off_TOV_pct,
+    off_ORB_pct,
+    off_FT_FGA,
+    FGA_2P,
+    FGA_0_3,
+    FGA_3_10,
+    FGA_10_16,
+    FGA_16_3P,
+    FGA_3P,
+    pct_2P,
+    pct_0_3,
+    pct_3_10,
+    pct_10_16,
+    pct_16_3P,
+    pct_3P,
+    corner_3PA,
+    corner_3P,
+
+FROM `BasketIntelligence`.team_adv_stats a
+JOIN `BasketIntelligence`.team_shooting b 
+ON a.Team = b.Team
