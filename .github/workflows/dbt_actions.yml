@@ -8,12 +8,15 @@ jobs:
   run_dbt:
     runs-on: ubuntu-latest
     steps:
+
+		-name: checkout code
+			  uses: actions/checkout@v4
     
     - name: dbt-action
       id: dbt-run
       uses: mwhitaker/dbt-action@master
       with:
-        dbt_command: "dbt run --profiles-dir ./profile"
+        dbt_command: "dbt run --profiles-dir ."
       env:
         DBT_BIGQUERY_TOKEN: ${{ secrets.DBT_BIGQUERY_TOKEN }}
         
