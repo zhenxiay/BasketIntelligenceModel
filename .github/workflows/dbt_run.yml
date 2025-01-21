@@ -2,7 +2,7 @@ name: Run dbt on BigQuery using mwhitaker/dbt-action
 
 on:
   push:
-    branches: none
+    branches: ["main"]
 
 jobs:
   run_dbt:
