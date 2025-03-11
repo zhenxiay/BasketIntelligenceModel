@@ -1,8 +1,14 @@
-name: Run dbt on BigQuery using mwhitaker/dbt-action
+name: dbt-build-manual
 
 on:
+  workflow_dispatch:
+    inputs:
+      tags:
+        description: 'Tag for manual execution'
+        required: false
+        type: boolean
   push:
-    branches: [ "test" ]
+    branches: ["test"]
 
 jobs:
   run_dbt:
