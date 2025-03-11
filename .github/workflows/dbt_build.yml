@@ -2,6 +2,8 @@ name: dbt-build-manual
 
 on:
   workflow_dispatch:
+  push:
+    branches: ["test"]
 
 jobs:
   run_dbt:
