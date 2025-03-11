@@ -1,6 +1,7 @@
 name: Run dbt on BigQuery using mwhitaker/dbt-action
 
 on:
+  workflow_dispatch:
   push:
     branches: ["main"]
 
